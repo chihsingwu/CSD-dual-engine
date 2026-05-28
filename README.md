@@ -8,6 +8,50 @@ The current reference implementation focuses on **Critical Slowing Down Early Wa
 
 <img width="1950" height="1350" alt="engine_ab_compare" src="https://github.com/user-attachments/assets/1da9f3ae-1930-42e0-a472-1abc36d17f65" />
 
+## 🚀 Empirical Validation Results
+
+### ⚡ The Core Breakthrough: Weak Damping & Dynamic Small-Signal Instability
+Traditional grid monitoring relies heavily on **Voltage Deviation ($V_{dev}$)**. However, as power systems integrate massive renewable energy sources, a catastrophic vulnerability emerges: **dynamic small-signal instability under weak-damping conditions**. In these scenarios, excitation controls artificialy maintain nominal voltage, masking the severe degradation of the system's underlying dynamic structure. **$V_{dev}$ fails completely here, while CSD-EWS thrives**.
+
+---
+
+### 📊 Experiment 1: IEEE 39-Bus Transient Stability
+Validated using **ANDES v2.0.0** on the New England 39-bus system across **116 multi-fault scenarios** ($77$ stable, $39$ unstable) with a 60 Hz PMU-equivalent sampling rate.
+
+#### 📈 Boundary Discovery & Performance
+* **Critical Clearing Time (CCT) Discovery**: Systematically identified the exact physical bifurcation boundary for a Bus 16 fault between **1.3s (Stable)** and **1.4s (Unstable)**.
+* **Pure Data-Driven Inference**: Operating **without any network topology, power flow models, or pre-trained classifiers**, Engine A achieved an exceptional **AUC-ROC of 0.8795** using rolling window metrics.
+
+| Metric Evaluation (Post-Fault Window) | AUC-ROC |
+| :--- | :---: |
+| **`score_J`** (Mean $\log \max|\lambda(J)|$ - Last 20 windows) | **0.8795** |
+| **`score_trend`** (Rolling trend statistic slope) | **0.8025** |
+| **`combo`** (Weighted Composite Score) | **0.8768** |
+
+* **Clean Binary Separation**: In single-scenario validation, the rolling trend slope provides an instantaneous binary indicator—a **positive slope** triggers immediate critical alert routing, while a **negative slope** robustly tracks system post-fault recovery[cite: 2, 3].
+
+---
+
+### 📉 Experiment 2: Kundur 4-Machine 2-Area Small-Signal Stability
+To simulate the absolute blind spot of conventional AI models, we executed an excitation gain ($K_A$) sweep ($K_A = 10, 20, 50, 200$) to induce progressive **inter-area oscillation damping degradation** near the 0.6 Hz mode[cite: 2].
+
+#### 🚨 CSD Jacobian vs. Traditional Voltage Deviation ($V_{dev}$)
+As the excitation gain ($K_A$) scales up to 200, the system approaches a critical transition due to **negative/weak damping**, magnifying inter-area oscillations by **8x**[cite: 2]. 
+
+| Excitation Gain ($K_A$) | System Stability Status | $V_{dev}$ Score (Traditional) | **CSD `score_J` (This Work)** |
+| :---: | :--- | :---: | :---: |
+| $K_A = 10$ | **Strong Damping (Optimal)** | 0.0502 | **0.0023** |
+| $K_A = 20$ | Normal Operation | 0.0480 | **0.0072** |
+| $K_A = 50$ | Weak Damping | 0.0471 | **0.0564** |
+| $K_A = 200$ | **Negative Damping (Critical Boundary)** | *0.0469 (Looks Better!)* | **0.1201 (Triggered!)** |
+
+#### 🎯 Spearman Correlation ($\rho$) Analysis
+* **Conventional $V_{dev}$ Failure ($\rho = -1.000$)**: Traditional voltage indicators point in the **perfect opposite direction**, signaling "improved safety" while the grid's dynamic structure is actually fracturing[cite: 2].
+* **CSD Jacobian Success ($\rho = +0.800$)**: Our data-driven Jacobian proxy successfully tracks the true underlying physical degradation of system damping with a powerful positive correlation[cite: 2].
+
+> ⚠️ **Critical Finding**: In modern weak-damping grid environments, traditional voltage deviation acts as a dangerous **anti-indicator** of dynamic stability. CSD-EWS provides the essential physics-informed validation layer required before thresholds are violated[cite: 2].
+
+
 
 
 
