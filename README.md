@@ -261,7 +261,7 @@ Do not overinterpret this release as:
 
 ### 🌐 Alignment with State-of-the-Art (AI4Science Frameworks)
 Our `CSD-dual-engine` architecture serves as a critical, physics-informed verification layer that perfectly complements current agentic workflows in power system analysis:
-* **Chongqing-Imperial TSA Framework (Hu, Wang, & Pal, 2026)**: Their outstanding LLM-driven simulation and NAS pipeline achieves high accuracy but exhibits structural classification confusion near adjacent stability boundaries (as reported in their lambda-space proximity analysis). Our unsupervised CSD Jacobian eigenvalue and spectral tracking (`score_J` & `LFPR`) provide the exact mathematical resolution to resolve these boundary ambiguities without requiring black-box retrainings.
+* **Chongqing-Imperial TSA Framework (Hu, Wang, & Pal, 2026)**: Their outstanding LLM-driven simulation and NAS pipeline achieves high accuracy outcome.
 
 ## Citation / attribution
 
