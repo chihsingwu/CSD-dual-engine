@@ -1,13 +1,16 @@
-##  CSD-Dual-Engine: A High-Fidelity Dynamic Verification Ecosystem for Cross-Domain Foundation Models
 
-The **CSD-dual-engine** is an open-source, zero-topology, PMU-only **Dynamic Verification Framework** specifically architected to evaluate, benchmark, and constrain Physics-Informed AI and cross-domain foundation models—such as **TokaMind (arXiv:2605.11033)**—during their operational transfer from foreign continuous domains (e.g., fusion plasma tracking) into critical power grid stability control.
+##  Ecosystem Role: Dynamic Boundary Verification for Cross-Domain Physical Foundation Models
 
-### 🔗 The Symbiotic Architecture: Why TokaMind Integration is Paramount
-While advanced cross-domain foundation models like **TokaMind** excel at macro-level policy inference and system-wide spatial optimization, they inherently operate as black-box probabilistic generators. When transferring controls into a lower-inertia power grid, out-of-distribution neural commands risk inducing catastrophic, un-damped inter-area oscillations or sudden bifurcation. 
+The **CSD-dual-engine** is an open-source, zero-topology **Dynamic Verification Framework** designed to evaluate, benchmark, and constrain emerging **Cross-Domain Physical Foundation Models** when transferring learned continuous control trajectories into high-penetration, lower-inertia power grid environments.
 
-Our Dual-Engine framework serves as the definitive **Physics-Driven "Failsafe Evaluation Layer"** for TokaMind's joint applications:
-* **The Action Core (TokaMind)**: Drives cross-domain adaptation, predictive tracking, and multi-variable control optimization.
-* **The Physics Guardrail (CSD-Dual-Engine)**: Continuously tests and validates TokaMind's control trajectories against fundamental physical invariants in real-time, catching system vulnerabilities *before* they violate actual grid hardware thresholds.
+### 🎯 The Core Rationale: Resolving the "Sim2Real & Domain-Transfer" Blind Spot
+While state-of-the-art foundation models excel at macro-level policy inference and multi-variable optimization across continuous spatial domains, they inherently operate as black-box probabilistic generators. When adapted to power electronic-interfaced power networks, out-of-distribution neural control commands pose a severe risk of inducing catastrophic, un-damped electromechanical oscillations or triggering hidden bifurcations.
+
+To ensure operational viability before down-stream physical deployment, this framework establishes a rigorous, physics-driven **Evaluation & Guardrail Layer**:
+* **The Generative Layer (The Foundation Model)**: Executes predictive tracking, cross-domain technical adaptation, and optimization policies.
+* **The Physics Guardrail (CSD-Dual-Engine)**: Continuously benchmarks the model's control trajectories against fundamental physical invariants in near real-time. By tracking the exact state-space proximity to critical transitions via time-domain and spectral-domain metrics, it isolates systemic vulnerabilities *before* physical system thresholds are violated.
+
+
 
 ---
 
