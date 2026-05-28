@@ -28,6 +28,9 @@ To satisfy the rigorous verification requirements of joint critical infrastructu
 ### ⚡ The Core Breakthrough: Weak Damping & Dynamic Small-Signal Instability
 Traditional grid monitoring relies heavily on **Voltage Deviation ($V_{dev}$)**. However, as power systems integrate massive renewable energy sources, a catastrophic vulnerability emerges: **dynamic small-signal instability under weak-damping conditions**. In these scenarios, excitation controls artificially maintain nominal voltage, masking the severe degradation of the system's underlying dynamic structure. **$V_{dev}$ fails completely here, while CSD-EWS thrives**.
 
+
+<img width="1950" height="1350" alt="engine_ab_compare" src="https://github.com/user-attachments/assets/b6ccaee6-1e33-4eeb-859f-1b0ad18bf87f" />
+
 ---
 
 ### 📊 Experiment 1: IEEE 39-Bus Transient Stability
