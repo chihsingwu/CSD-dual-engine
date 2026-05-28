@@ -6,6 +6,12 @@ This project does **not** present a full grid product or a replacement for exist
 
 The current reference implementation focuses on **Critical Slowing Down Early Warning Signals (CSD-EWS)** using the Kundur 4-machine system and a KA excitation-gain sweep.
 
+<img width="1950" height="1350" alt="engine_ab_compare" src="https://github.com/user-attachments/assets/1da9f3ae-1930-42e0-a472-1abc36d17f65" />
+
+
+
+
+
 ## Core idea
 
 Modern grid AI methods can be evaluated not only by classification accuracy or OPF feasibility, but also by whether their outputs remain consistent with physical stability margins near dynamic boundaries.
