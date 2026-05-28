@@ -6,7 +6,7 @@ The **CSD-dual-engine** is an open-source, zero-topology **Dynamic Verification 
 ### 🎯 The Core Rationale: A Non-Invasive Physics Guardrail for AI Controls
 As advanced deep learning architectures and foundation models become increasingly integrated into operational grid optimization—whether through native power system spatial modeling or cross-domain policy transfer—they inherently operate as probabilistic text/action generators. In complex, low-inertia networks, any out-of-distribution neural prediction risks inducing catastrophic, un-damped electromechanical oscillations or triggering hidden bifurcations.
 
-To bridge the gap between deep learning outputs and critical infrastructure safety, this framework provides a zero-topology, physics-driven **Evaluation & Guardrail Layer**[cite: 1]:
+To bridge the gap between deep learning outputs and critical infrastructure safety, this framework provides a zero-topology, physics-driven **Evaluation & Guardrail Layer**:
 * **The Predictive Layer**: Executes advanced policy inference, predictive tracking, and multi-variable optimization trajectories (applicable to all native or transferred network AI models).
 * **The Physics Guardrail (CSD-Dual-Engine)**: Continuously benchmarks the AI-generated trajectories against fundamental physical invariants in near real-time. By tracking the exact state-space proximity to critical transitions via parallel time-domain and spectral-domain metrics, it isolates dynamic stability failure modes *before* actual system hardware thresholds are violated.
 
