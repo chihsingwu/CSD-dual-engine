@@ -1,5 +1,5 @@
 
-# Ecosystem Role: Physics-Driven Dynamic Boundary Verification for Data-Driven Power Grid AI
+# CSD-Dual-Engine: Physics-Driven Dynamic Boundary Verification for Power Grid Foundation Models
 
 The **CSD-dual-engine** is an open-source, zero-topology **Dynamic Verification Framework** designed to evaluate, benchmark, and provide real-time physical constraints for continuous data-driven control, time-series forecasting, and foundation models operating within high-penetration, lower-inertia power networks.
 
