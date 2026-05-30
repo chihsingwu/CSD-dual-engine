@@ -143,6 +143,41 @@ The goal is not to claim that CSD-EWS replaces these models. The goal is to prov
 
 > Does the AI prediction remain consistent with damping-aware stability evidence near the physical boundary? By establishing this cross-validation interface, we enable rigorous benchmarking of diverse AI architectures—ranging from grid-native foundation models like GridSFM to cross-domain models like TokaMind—against the immutable physical laws governing dynamic stability.
 
+
+## Complementary Approaches in Grid Stability Monitoring
+
+Current power grid stability assessment often relies on static AC-OPF feasibility tools (such as Microsoft GridSFM) to evaluate network topology and static voltage bounds. While highly effective for steady-state analysis, these tools can be complemented by dynamic time-domain monitoring to address transient instabilities.
+
+The `CSD-dual-engine` introduces a dynamic precursor detection framework, designed to integrate with existing static analysis ecosystems. By continuously evaluating the damping ratio of critical system poles from PMU time-series data, it provides real-time visibility into dynamic phenomena, such as critical slowing down (CSD), prior to apparent voltage collapse.
+
+### 1. Dynamic vs. Static Monitoring Scenarios
+
+![Comparison of GridSFM static feasibility and CSD-EWS dynamic instability detection](https://github.com/chihsingwu/CSD-dual-engine/blob/main/gridsfm-csd-ews-dynamic-stability-comparison.png)
+*Figure 1: Illustration of system behavior under varying damping conditions. In scenarios with weak or negative damping, dynamic instability (captured via LFPR) can escalate even while voltage deviations remain within nominal static bounds.*
+
+### 2. The Role of Low-Frequency Power Ratio (LFPR)
+
+![Voltage monitoring combined with LFPR for holistic grid safety](https://github.com/chihsingwu/CSD-dual-engine/blob/main/voltage-collapse-lfpr-dynamic-monitoring.png)
+*Figure 2: The LFPR metric serves as an early warning indicator for dynamic instability, functioning independently of network topology by analyzing sliding windows of local PMU measurements.*
+
+### 3. Time-Domain Damping Ratio Extraction
+
+![Time-domain extraction of damping ratios from PMU time series](https://github.com/chihsingwu/CSD-dual-engine/blob/main/pmu-time-series-damping-ratio-extraction.png)
+*Figure 3: Representation of the underlying physical constraints. Engine B extracts dynamic damping properties directly from time-series oscillations, establishing temporal constraints suitable for robust AI control applications.*
+
+---
+
+### Interactive Pole & Damping Simulator
+
+To illustrate the relationship between the system's dominant poles (eigenvalues) and the resulting time-domain response, we provide an interactive simulator based on the standard damping ratio formula: `ζ = -σ / √(σ² + ω²)`.
+
+👉 **[Launch Interactive Simulator](Link_to_your_GitHub_Pages/CSD_Pole_Damping_Simulator.html)**
+*(This simulator visually maps the real (σ) and imaginary (ω) components of the extracted Jacobian proxy to the corresponding dynamic behavior, demonstrating the transition from a strongly damped state to sustained oscillations.)*
+
+
+
+
+
 ## What this package currently provides
 
 This v0.1 release provides the CSD-EWS reference layer only:
