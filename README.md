@@ -152,17 +152,15 @@ The `CSD-dual-engine` introduces a dynamic precursor detection framework, design
 
 ### 1. Dynamic vs. Static Monitoring Scenarios
 
-![Comparison of GridSFM static feasibility and CSD-EWS dynamic instability detection](https://github.com/chihsingwu/CSD-dual-engine/blob/main/gridsfm-csd-ews-dynamic-stability-comparison.png)
+<img width="2682" height="1400" alt="gridsfm-csd-ews-dynamic-stability-comparison" src="https://github.com/user-attachments/assets/1b00bebb-f14a-499c-9d41-45f0a799a2a5" />
 *Figure 1: Illustration of system behavior under varying damping conditions. In scenarios with weak or negative damping, dynamic instability (captured via LFPR) can escalate even while voltage deviations remain within nominal static bounds.*
 
 ### 2. The Role of Low-Frequency Power Ratio (LFPR)
-
-![Voltage monitoring combined with LFPR for holistic grid safety](https://github.com/chihsingwu/CSD-dual-engine/blob/main/voltage-collapse-lfpr-dynamic-monitoring.png)
+<img width="2681" height="1213" alt="voltage-collapse-lfpr-dynamic-monitoring" src="https://github.com/user-attachments/assets/e5a36d59-cc1a-4679-a4f3-fa36bef5cc77" />
 *Figure 2: The LFPR metric serves as an early warning indicator for dynamic instability, functioning independently of network topology by analyzing sliding windows of local PMU measurements.*
 
 ### 3. Time-Domain Damping Ratio Extraction
-
-![Time-domain extraction of damping ratios from PMU time series](https://github.com/chihsingwu/CSD-dual-engine/blob/main/pmu-time-series-damping-ratio-extraction.png)
+<img width="2503" height="1436" alt="pmu-time-series-damping-ratio-extraction" src="https://github.com/user-attachments/assets/24cb22f5-9bab-4ef3-bb16-c6a75b3be3f1" />
 *Figure 3: Representation of the underlying physical constraints. Engine B extracts dynamic damping properties directly from time-series oscillations, establishing temporal constraints suitable for robust AI control applications.*
 
 ---
